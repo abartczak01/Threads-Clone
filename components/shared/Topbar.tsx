@@ -1,6 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
-import { OrganizationSwitcher, SignOutButton, SignedIn } from "@clerk/nextjs";
+import {
+  OrganizationSwitcher,
+  SignInButton,
+  SignOutButton,
+  SignedIn,
+  SignedOut,
+} from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
 
 function Topbar() {
@@ -25,6 +31,21 @@ function Topbar() {
               </div>
             </SignOutButton>
           </SignedIn>
+        </div>
+        <div className="block md:hidden">
+          <SignedOut>
+            <SignInButton>
+              <div className="flex cursor-pointer gap-4">
+                <Image
+                  src="/assets/login.svg"
+                  alt="login"
+                  width={24}
+                  height={24}
+                />
+                <p className="text-light-2">Log In</p>
+              </div>
+            </SignInButton>
+          </SignedOut>
         </div>
         <OrganizationSwitcher
           appearance={{

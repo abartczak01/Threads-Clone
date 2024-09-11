@@ -3,7 +3,13 @@ import { sidebarLinks } from "@/constants";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { SignedIn, SignOutButton, useAuth } from "@clerk/nextjs";
+import {
+  SignedIn,
+  SignedOut,
+  SignInButton,
+  SignOutButton,
+  useAuth,
+} from "@clerk/nextjs";
 
 function LeftSidebar() {
   const pathname = usePathname();
@@ -50,6 +56,19 @@ function LeftSidebar() {
             </div>
           </SignOutButton>
         </SignedIn>
+        <SignedOut>
+          <SignInButton>
+            <div className="flex cursor-pointer gap-4 p-4">
+              <Image
+                src="/assets/login.svg"
+                alt="login"
+                width={24}
+                height={24}
+              />
+              <p className="text-light-2 max-lg:hidden">Log In</p>
+            </div>
+          </SignInButton>
+        </SignedOut>
       </div>
     </section>
   );

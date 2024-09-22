@@ -115,4 +115,4 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to view the 
 
 ## <a name="deployment">Deployment</a>
 
-Deployed app is available [here](https://threads-clone-mtxpalyzz-abartczak01s-projects.vercel.app/).
+Deployed app is available [here](https://threads-clone-mu-eight.vercel.app/).
